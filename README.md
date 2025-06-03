@@ -12,8 +12,8 @@
 
 1.  **克隆代码库**:
     ```bash
-    git clone <your-repository-url>
-    cd <repository-name>
+    git clone https://github.com/aicezam/simple-aitodo.git
+    cd simple-aitodo
     ```
 
 2.  **创建并激活虚拟环境** (推荐):
