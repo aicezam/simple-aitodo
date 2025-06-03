@@ -259,11 +259,11 @@ API 接口统一前缀为 `/api/v1`。所有受保护的接口都需要在请求
 *   `CronConfig`: Cron 任务的详细配置 (表达式, 起止时间, 限制日期类型, 农历月日)。
 *   `TaskStatusEnum`: 任务状态枚举 (`待执行`, `待计算`, `执行中`, `执行完成`, `失败`)。
 
-## 附属项目：微信 Dify 助手 (`simple_wechat_on_dify/`)
+## 附属项目：微信 Dify 助手 (`simple_dify_on_wechat/`)
 
-项目包含一个名为 `simple_wechat_on_dify` 的子目录，这是一个独立的、简单的 Python 应用，用于将微信个人号（通过 [WeChatPadPro](https://github.com/luolin-ai/WeChatPadPro/) 等HTTP API框架接入）与 Dify AI 应用连接起来。
+项目包含一个名为 `simple_dify_on_wechat` 的子目录，这是一个独立的、简单的 Python 应用，用于将微信个人号（通过 [WeChatPadPro](https://github.com/luolin-ai/WeChatPadPro/) 等HTTP API框架接入）与 Dify AI 应用连接起来。
 
-### `simple_wechat_on_dify` 功能：
+### `simple_dify_on_wechat` 功能：
 
 *   通过 WebSocket 接收微信消息。
 *   对指定条件的消息 (如私聊消息、群聊中@机器人的消息) 进行处理。
@@ -274,11 +274,11 @@ API 接口统一前缀为 `/api/v1`。所有受保护的接口都需要在请求
 *   支持消息批处理：短时间内收到的来自同一用户的多条消息会合并后一次性发送给 Dify。
 *   Dify 回复中的 Markdown 图片链接会被解析并作为图片发送到微信。
 
-### `simple_wechat_on_dify` 安装与配置：
+### `simple_dify_on_wechat` 安装与配置：
 
-1.  进入子目录: `cd simple_wechat_on_dify`
+1.  进入子目录: `cd simple_dify_on_wechat`
 2.  安装依赖: `pip install -r requirements.txt` (注意，此 `requirements.txt` 与主项目的不同)
-3.  配置 `.env` 文件 (在 `simple_wechat_on_dify` 目录下创建):
+3.  配置 `.env` 文件 (在 `simple_dify_on_wechat` 目录下创建):
     ```env
     # WeChatPadPro Configuration
     WECHAT_API_BASE_URL="http://your_wechatpadpro_host:port"
@@ -299,7 +299,7 @@ API 接口统一前缀为 `/api/v1`。所有受保护的接口都需要在请求
 4.  **额外依赖**: `ffmpeg`
     语音消息处理依赖 `ffmpeg` 进行音频格式转换。请确保您的系统已安装 `ffmpeg` 并且其路径已添加到系统环境变量 `PATH` 中。
 
-### `simple_wechat_on_dify` 运行：
+### `simple_dify_on_wechat` 运行：
 
 ```bash
-python simple_wechat_on_dify/main.py
+python simple_dify_on_wechat/main.py
