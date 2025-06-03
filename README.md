@@ -107,7 +107,7 @@
     服务将运行在 `http://0.0.0.0:5004`。
 
 *   **生产模式** (使用 Gunicorn):
-    项目已包含 `gunicorn_conf.py` 配置文件。
+    项目已包含 `gunicorn_conf.py` 配置文件，自行修改配置。
     ```bash
     gunicorn -c gunicorn_conf.py app.main:app
     ```
