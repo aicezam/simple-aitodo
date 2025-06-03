@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+# 根据您的数据库选择驱动, e.g., psycopg2-binary for PostgreSQL
+apscheduler
+httpx
+python-dotenv
+croniter
+lunardatepydantic[email]
+gunicorn
