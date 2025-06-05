@@ -59,7 +59,7 @@ def get_task_parsing_prompt(natural_language_query: str, current_time_str: str, 
       "is_recurring": "boolean (用于 'CREATE_TASK'或'UPDATE_TASK'。一次性任务时设为false, 默认为false)",
       
       "cron_config": {{ "(用于 'CREATE_TASK'或'UPDATE_TASK'。当 is_recurring=true 时通常需要)"
-        "cron_expression": "string (标准的5或6字段CRON表达式。若 is_lunar=true 或 limit_days 有值，则cron表达式通常只需 时、分 部分, 例如 '30 18')",
+        "cron_expression": "string (标准的5或6字段CRON表达式。若 is_lunar=true 或 limit_days 有值，则cron表达式通常只需 时、分 部分, 例如：每天中午十二点执行一次：'0 0 12 * * ?'; 每天14点到14：59分，每1分钟执行一次：'0 * 14 * * ?'; 每天14点到14：05分，每1分钟执行一次：'0 0-5 14 * * ?'; 每天14点到14：55分，每5分钟执行一次：'0 0/5 14 * * ?')",
         "start_time": "string (可选, YYYY-MM-DD HH:MM:SS，限制任务执行开始时间)",
         "end_time": "string (可选, YYYY-MM-DD HH:MM:SS，限制任务执行结束时间)",
         "limit_days": ["string"] (可选, 限制执行的日期类型数组。允许的值: "WORKDAY", "HOLIDAY", "WEEKEND", "WEEKDAY_ONLY". 如果用户说“工作日”，使用 ["WORKDAY"])",
